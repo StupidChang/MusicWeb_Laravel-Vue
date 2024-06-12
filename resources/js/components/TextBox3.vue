@@ -7,30 +7,41 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-6 align-self-center">
+
                 <div class="row">
                     <div class="col fade-in-item" data-index="0">
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">您的稱呼</label>
-                            <input type="text" class="form-control" id="Name" v-model="formData.name" placeholder="名稱 例: 喵喵、王XX">
+                            <input type="text" class="form-control" id="Name" v-model="formData.name" placeholder="您的稱呼 如: 喵喵。">
                         </div>
                     </div>
                     <div class="col fade-in-item" data-index="1">
                         <div class="mb-3">
                             <label for="exampleFormControlInput2" class="form-label">電子郵件</label>
-                            <input type="email" class="form-control" id="Email" v-model="formData.email" placeholder="123xxx@gmail.com">
+                            <input type="email" class="form-control" id="Email" v-model="formData.email" placeholder="Example@gmail.com">
                         </div>
                     </div>
                 </div>
-                <div class="mb-3 fade-in-item">
-                    <label for="exampleFormControlInput1" class="form-label">委託內容</label>
-                    <select class="form-select" v-model="formData.commission_type" aria-label="Default select example">
-                        <option selected>選擇您的委託類型</option>
-                        <option value="1">原創樂器編曲</option>
-                        <option value="2">Cover製作</option>
-                        <option value="3">LOOP背景音樂</option>
-                        <option value="3">場景背景音樂</option>
-                    </select>
+
+                <div class="row mb-3">
+                    <div class="col fade-in-item" data-index="2">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput2" class="form-label">預算金額</label>
+                            <input type="email" class="form-control" id="Email" v-model="formData.email" placeholder="您所預計花費的預算。">
+                        </div>
+                    </div>
+                    <div class="col fade-in-item" data-index="3">
+                        <label for="exampleFormControlInput1" class="form-label">委託內容</label>
+                        <select class="form-select" v-model="formData.commission_type" aria-label="Default select example"  placeholder="選擇您的委託類型">
+                            <option selected>選擇您的委託類型</option>
+                            <option value="1">原創樂器編曲</option>
+                            <option value="2">Cover製作</option>
+                            <option value="3">LOOP背景音樂</option>
+                            <option value="3">場景背景音樂</option>
+                        </select>
+                    </div>
                 </div>
+
 
                 <div class="mb-3 fade-in-item">
                     <label for="exampleFormControlTextarea1" class="form-label">詳細委託內容</label>
@@ -91,7 +102,7 @@
                 } catch (error) {
                     this.alert.type = 'error';
                     if (error.response && error.response.data) {
-                        this.alert.message = error.response.data.message || '提交失敗，請重試。';
+                        this.alert.message = '提交失敗，請重試。' || error.response.data.message;
                     } else {
                         this.alert.message = '提交失敗，請檢查網路連接後重試。';
                     }
@@ -121,6 +132,8 @@
 <style scoped>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
     @import url('https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css');
+
+
 
     .fade-in-item {
         animation: leftIn 4s ease-in-out 0s 1

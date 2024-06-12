@@ -15,14 +15,14 @@
         </div>
 
         <div class="row pb-3">
-            <h1 class="col-12 d-flex justify-content-center Notofont">參考作品 </h1>
-            <div class="col-12 d-flex justify-content-center Notofont pb-2">│</div>
-            <div class="col-12 d-flex justify-content-center">
+            <h1 class="col-12 d-flex justify-content-center Notofont fadein">參考作品 </h1>
+            <div class="col-12 d-flex justify-content-center Notofont pb-2 fadein">│</div>
+            <div class="col-12 d-flex justify-content-center fadeleftin">
                 <swiper></swiper>
             </div>
         </div>
       </div>
-      
+
       <Card></Card>
     </StarbackCanvas>
   <mainfooter></mainfooter>
@@ -62,4 +62,31 @@ export default {
         color: rgba(255, 255, 255, 0.829) !important;
     }
 
+    .fadein{
+        animation: fade 4s ease-in-out 0s 1 ;
+    }
+
+    .fadeleftin{
+        animation: leftIn 4s ease-in-out 0s 1 ;
+    }
+
+    @keyframes fade {
+        from {
+        opacity: 0;
+        }
+        to {
+        opacity: 1;
+        }
+    }
+
+    @keyframes leftIn {
+        from {
+            transform: translate3d(-5%, 0, 0);
+            opacity: 0;
+        }
+        to {
+            transform: none;
+            opacity: 1;
+        }
+    }
 </style>

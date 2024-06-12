@@ -81,6 +81,7 @@
         color: #ffffff;
         font-weight: bold;
         animation: leftIn 2s ease-in-out 0s 1;
+        border-radius: 15px; /* 增加圓角以更美觀 */
     }
 
     @keyframes leftIn {
