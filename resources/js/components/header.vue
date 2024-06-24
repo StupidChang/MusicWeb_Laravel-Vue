@@ -1,32 +1,62 @@
 <template>
-    <header>
-        <div class="logo">
-            <router-link class="router-link rounded-2 logo-link" to="/Home" ><img class="logo" src="../../assets/S__7184395.jpg" alt="logo"></router-link>
+    <header class="row m-0 p-0 d-flex align-items-center justify-content-between">
+        <div class="logo col-xxl-2 col-lg-6">
+            <router-link class="nav-link rounded-2 logo-link" to="/Home"><img class="logo" src="../../assets/S__7184395.jpg" alt="logo"></router-link>
+            <img src="../../assets/EOE工作室.png" alt="New Image" class="mx-5">
         </div>
 
-        <div class="nav">
-            <router-link class="router-link rounded-2 " to="/Home" ><span>{{ isActiveRoute('/Home') ? '🌌 ' : '' }}首頁</span></router-link>
-            <router-link class="router-link rounded-2 " to="/Project"><span>{{ isActiveRoute('/Project') ? '🌌 ' : '' }}委託專案</span></router-link>
-            <router-link class="router-link rounded-2 " to="/Contact"><span>{{ isActiveRoute('/Contact') ? '🌌 ' : '' }}聯繫我</span></router-link>
-        </div>
+        <nav class="navbar navbar-expand-xxl navbar-light nav col-8 mx-6 px-6">
+            <div class=" justify-content-center">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mb-2 mb-xxl-0 w-100 d-flex justify-content-center flex-wrap">
+                        <li class="nav-item mx-1">
+                            <router-link class="nav-link rounded-2" to="/Home"><span>{{ isActiveRoute('/Home') ? '🌌 ' : '' }}首頁</span></router-link>
+                        </li>
+                        <li class="nav-item mx-1">
+                            <router-link class="nav-link rounded-2" to="/Project"><span>{{ isActiveRoute('/Project') ? '🌌 ' : '' }}委託專案</span></router-link>
+                        </li>
+                        <li class="nav-item dropdown mx-1">
+                            <router-link class="nav-link rounded-2" to="/Contact"><span>{{ isActiveRoute('/Contact') ? '🌌 ' : '' }}聯繫我</span></router-link>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
-        <div class="Links">
+        <!-- <div class="nav" :class="{ 'nav-hidden': !navVisible }">
+            <router-link class="router-link rounded-2" to="/Home"><span>{{ isActiveRoute('/Home') ? '🌌 ' : '' }}首頁</span></router-link>
+            <router-link class="router-link rounded-2" to="/Project"><span>{{ isActiveRoute('/Project') ? '🌌 ' : '' }}委託專案</span></router-link>
+            <router-link class="router-link rounded-2" to="/Contact"><span>{{ isActiveRoute('/Contact') ? '🌌 ' : '' }}聯繫我</span></router-link>
+        </div>-->
+
+
+        <div class="Links col-xxl-2">
             <a href="https://www.youtube.com/@user-qj6oi4rx7v"><img class="YT" src="../../assets/youtube.png" alt="Youtube"></a>
             <a href=""><img class="Twitter" src="../../assets/twitter.png" alt="Twitter"></a>
         </div>
+
     </header>
 </template>
 
 <script>
 export default {
   name: 'main-header',
+  data() {
+    return {
+      navVisible: false
+    };
+  },
   methods: {
     isActiveRoute(routePath) {
       return this.$route.path === routePath;
-    }
+    },
   }
 }
 </script>
+
 
 <style scoped>
 @font-face {
@@ -36,7 +66,8 @@ export default {
         url('../../font/GenWanMinTWSemiBold.eot')format("eot");
 }
 
-.router-link-active:not(.logo-link) {
+
+.nav-link-active:not(.logo-link) {
     color: #cd98ff;  /* 修改為您希望的顏色或樣式 */
     font-weight: bold;
 }
@@ -59,9 +90,8 @@ header{
 }
 
 .logo{
-    width: 100%;
     height: 7vh;
-    display:flex;
+    display: flex;
     border-radius: 50%;
     justify-content: flex-start;
 }
@@ -89,13 +119,18 @@ header{
 }
 
 .nav{
-  width: 50%;
+  width: auto;
   display: flex;
-  justify-content: space-between;
-  padding: 1% 10% 1% 1%;
+  justify-content: center;
 }
 
-.router-link:not(.logo-link) {
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.nav-link:not(.logo-link) {
     color: #364246;
     font-weight: bold;
     font-size: 18px;
@@ -107,12 +142,12 @@ header{
     overflow: hidden;
     padding: 10px 20px;
 }
-.router-link span {
+.nav-link span {
     position: relative;
     z-index: 100;
 }
-.router-link:before:not(.logo-link),
-.router-link:after:not(.logo-link) {
+.nav-link:before:not(.logo-link),
+.nav-link:after:not(.logo-link) {
     content: '';
     position: absolute;
     height: 100%;
@@ -120,21 +155,73 @@ header{
     top: 0;
     left: 0;
 }
-.router-link:before:not(.logo-link) {
+.nav-link:before:not(.logo-link) {
     transform: translate3d(-100%, 0, 0);
     background-color: #FFFFFF;
     transition: transform 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
-.router-link:after:not(.logo-link) {
+.nav-link:after:not(.logo-link) {
     background-color: #ffd1d8;
     transform: translate3d(100%, 0, 0);
     transition: transform 300ms 300ms cubic-bezier(0.16, 0.73, 0.58, 0.62);
 }
-.router-link:hover:before:not(.logo-link) {
+.nav-link:hover:before:not(.logo-link) {
     transform: translate3d(0, 0, 0);
 }
-.router-link:hover:after:not(.logo-link) {
+.nav-link:hover:after:not(.logo-link) {
     transform: translate3d(0, 0, 0);
 }
 
+
+/* 隱藏 Links 當視窗寬度小於 1400px */
+@media (max-width: 982px) {
+    .Links {
+        display: none;
+    }
+
+    .navbar-expand-xxl .navbar-toggler {
+        display: block;
+    }
+
+    .navbar-expand-xxl .navbar-collapse {
+        display: none !important;
+    }
+
+    .navbar-collapse .nav-item {
+        margin: 5px; /* 添加外邊距以擴大背景區域 */
+    }
+
+    .navbar-collapse .nav-link {
+        padding: 15px 5px; /* 添加內邊距以擴大背景區域 */
+        background-color: #ffffffb4; /* 確保背景顏色填充整個區域 */
+        border-radius: 5px; /* 可選：添加圓角 */
+    }
+
+    .navbar-expand-xxl .navbar-collapse.collapse.show {
+        display: flex !important;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        position: absolute;
+        top: 100%;
+        left: 10px; /* 調整左邊距 */
+        right: 10px; /* 調整右邊距 */
+        width: calc(100% - 20px); /* 調整寬度以確保兩邊有空間 */
+        z-index: 1;
+    }
+}
+
+@media (min-width: 982px) {
+    .navbar-expand-xxl .navbar-toggler {
+        display: none;
+    }
+
+    .navbar-expand-xxl .navbar-collapse {
+        display: flex !important;
+    }
+
+    .nav{
+        width: auto;
+    }
+}
 </style>

@@ -24,12 +24,12 @@
                 </div>
 
                 <div class="row mb-3">
-                    <div class="col fade-in-item" data-index="2">
+                    <!--<div class="col fade-in-item" data-index="2">
                         <div class="mb-3">
                             <label for="exampleFormControlInput2" class="form-label">預算金額</label>
-                            <input type="email" class="form-control" id="Email" v-model="formData.email" placeholder="您所預計花費的預算。">
+                            <input type="email" class="form-control" id="Money" v-model="formData.email" placeholder="您所預計花費的預算。">
                         </div>
-                    </div>
+                    </div>-->
                     <div class="col fade-in-item" data-index="3">
                         <label for="exampleFormControlInput1" class="form-label">委託內容</label>
                         <select class="form-select" v-model="formData.commission_type" aria-label="Default select example"  placeholder="選擇您的委託類型">
@@ -102,7 +102,7 @@
                 } catch (error) {
                     this.alert.type = 'error';
                     if (error.response && error.response.data) {
-                        this.alert.message = '提交失敗，請重試。' || error.response.data.message;
+                        this.alert.message = error.response.data.message || '提交失敗，請重試。';
                     } else {
                         this.alert.message = '提交失敗，請檢查網路連接後重試。';
                     }
