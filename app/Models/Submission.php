@@ -12,8 +12,10 @@ class Submission extends Model
     protected $fillable = [
         'name',
         'email',
+        'money',
         'commission_type',
         'details',
+        'state',
         'end_date',
     ];
 }

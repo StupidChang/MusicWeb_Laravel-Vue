@@ -4,6 +4,7 @@ import Main from '../Main.vue';  // 确保路径正确
 import App from '../App.vue';  // 确保路径正确
 import Project from '../Project.vue';  // 确保路径正确
 import Contact from '../Contact.vue';  // 确保路径正确
+import Administrator from '../Administrator.vue';  // 确保路径正确
 
 const routes = [
   {
@@ -12,7 +13,8 @@ const routes = [
     children: [
       { path: 'Home', name: 'Home', component: App },
       { path: 'Project', name: 'Project', component: Project },
-      { path: 'Contact', name: 'Contact', component: Contact }
+      { path: 'Contact', name: 'Contact', component: Contact },
+      { path: 'Administrator', name: 'Administrator', component: Administrator },
     ]
   }
 ];

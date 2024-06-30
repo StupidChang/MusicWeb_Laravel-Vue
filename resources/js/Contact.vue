@@ -1,7 +1,7 @@
 <template>
     <mainheader></mainheader>
         <StarbackCanvas>
-            <div class="container .bg-secondary.bg-gradient bg-opacity-10">
+            <div class="container">
                 <div class="row py-3">
                     <div class="col-12">
                         <polygonvideo video-src="../assets/FDownloader.net-366239529314160-(1080p).mp4"></polygonvideo>
@@ -42,7 +42,7 @@
 </script>
 
 <style>
-    imagestyle{
+    .imagestyle{
         clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
     }
 

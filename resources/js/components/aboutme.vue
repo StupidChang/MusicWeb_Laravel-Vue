@@ -1,5 +1,5 @@
 <template>
-    <v-card class="mx-auto me Text" subtitle="Jun-12．24 🍵" title="關於">
+    <v-card class="cardStyle Text" subtitle="Jun-12．24 🍵" title="關於">
         <template v-slot:prepend>
           <v-icon color="primary" icon="mdi-account"></v-icon>
         </template>
@@ -30,7 +30,7 @@
         font-weight: bold; /* 粗體 */
     }
 
-    .me {
+    .cardStyle {
         backdrop-filter: blur(30px);
         box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);
         /*border: 2px solid rgba(255, 255, 255, 0.18);*/
@@ -38,6 +38,7 @@
         padding: 20px; /* 增加一些內間距以提升視覺效果 */
         border-radius: 25px; /* 增加圓角以更美觀 */
         color: rgba(255, 255, 255, 0.85);
+        width: 35vmin;
     }
 
     .Text {

@@ -6,18 +6,18 @@
 
         </div>
         <div class="row justify-content-center">
-            <div class="col-6 align-self-center">
+            <div class="col-xxl-6 col-sm-10 align-self-center">
 
                 <div class="row">
                     <div class="col fade-in-item" data-index="0">
                         <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">您的稱呼</label>
+                            <label for="nameInput" class="form-label">您的稱呼</label>
                             <input type="text" class="form-control" id="Name" v-model="formData.name" placeholder="您的稱呼 如: 喵喵。">
                         </div>
                     </div>
                     <div class="col fade-in-item" data-index="1">
                         <div class="mb-3">
-                            <label for="exampleFormControlInput2" class="form-label">電子郵件</label>
+                            <label for="emailInput" class="form-label">電子郵件</label>
                             <input type="email" class="form-control" id="Email" v-model="formData.email" placeholder="Example@gmail.com">
                         </div>
                     </div>
@@ -30,18 +30,23 @@
                             <input type="email" class="form-control" id="Money" v-model="formData.email" placeholder="您所預計花費的預算。">
                         </div>
                     </div>-->
-                    <div class="col fade-in-item" data-index="3">
+                    <div class="col fade-in-item" data-index="2">
                         <label for="exampleFormControlInput1" class="form-label">委託內容</label>
-                        <select class="form-select" v-model="formData.commission_type" aria-label="Default select example"  placeholder="選擇您的委託類型">
+                        <select class="form-select" v-model="formData.commission_type" aria-label="Default select" >
                             <option selected>選擇您的委託類型</option>
                             <option value="1">原創樂器編曲</option>
                             <option value="2">Cover製作</option>
                             <option value="3">LOOP背景音樂</option>
-                            <option value="3">場景背景音樂</option>
+                            <option value="4">場景背景音樂</option>
                         </select>
                     </div>
+                    <div class="col fade-in-item" data-index="3">
+                        <div class="mb-3">
+                            <label for="moneyInput" class="form-label">預算金額</label>
+                            <input type="text" class="form-control" id="money" v-model="formData.money" placeholder="預想花費金額: 1500、4000">
+                        </div>
+                    </div>
                 </div>
-
 
                 <div class="mb-3 fade-in-item">
                     <label for="exampleFormControlTextarea1" class="form-label">詳細委託內容</label>
@@ -49,7 +54,7 @@
                 </div>
 
                 <div class="mb-3 fade-in-item">
-                    <label for="exampleFormControlInput2" class="form-label">預計交件時間</label>
+                    <label for="timeInput" class="form-label">預計交件時間</label>
                     <input id="end_date" type="date" class="form-control" v-model="formData.end_date">
                 </div>
             </div>
@@ -95,7 +100,7 @@
             },
             async submitForm() {
                 try {
-                    const response = await axios.post('/submit-form', this.formData);
+                    const response = await axios.post('/submissions-form', this.formData);
                     this.alert.type = 'success';
                     this.alert.message = response.data.message + "　請隨時注意電子郵件，將會在3~5個工作天後回復！";
                     this.alert.show = true;
@@ -115,6 +120,7 @@
                 formData:{
                     name: '',
                     email: '',
+                    money: '無',
                     commission_type: '',
                     details: '',
                     endDate: new Date().toISOString().substring(0, 10)  // 以 YYYY-MM-DD 格式存儲日期
@@ -132,8 +138,6 @@
 <style scoped>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
     @import url('https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css');
-
-
 
     .fade-in-item {
         animation: leftIn 4s ease-in-out 0s 1

@@ -13,7 +13,7 @@
             <p class="offset-2 col-10">如果想要委託的話請Email到 dakuneko0211@gmail.com 就好嚕！</p>
         </div>
         <div class="row justify-content-start">
-            <CustomButton class="offset-md-2 col-1" :to="'/project'" :Text="'我要委託'"></CustomButton>
+            <CustomButton class="offset-2 col-1" :to="'/project'" :Text="'我要委託'"></CustomButton>
             <CustomButton class="mx-2 col-1" :to="'/Contact'" :Text="'相關資訊'"></CustomButton>
         </div>
     </div>

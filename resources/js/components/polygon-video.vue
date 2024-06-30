@@ -1,28 +1,47 @@
 <template>
-    <div class="polygon-image-container">
-        <div class="image-wrapper">
-        <video ref="videoPlayer" class="video-content" autoplay loop muted :style="{clipPath: `url(#roundedPolygon)`}">
-            <source src="../../assets/FDownloader.net-366239529314160-(1080p).mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <svg class="svg-overlay" xmlns="">
-            <defs>
-            <clipPath id="roundedPolygon">
-                <path :d="pathData" />
-            </clipPath>
-            </defs>
-        </svg>
+    <div class="row polygon-image-container">
+        <div class="col-12">
+            <video ref="videoPlayer" class="video-content" autoplay loop muted >
+                <source src="../../assets/FDownloader.net-366239529314160-(1080p).mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <svg class="svg-overlay" xmlns="" preserveAspectRatio="xMidYMid none" viewBox="0 0 1920 1080">
+                <defs>
+                <clipPath id="roundedPolygon" clipPathUnits="objectBoundingBox">
+                    <path :d="pathData" />
+                </clipPath>
+                </defs>
+            </svg>
         </div>
-        <div class="text-container">
+
+        <aboutme class="me d-none d-xl-block"></aboutme>
+
+        <div class="text-container d-none d-xl-block">
             <p class="Text">準備好製作屬於自己的音樂?</p>
 
             <router-link class="router-link " to="/Project">
                 現在委託
                 <span class="arrow">📜</span>
             </router-link>
-
         </div>
-        <aboutme class=""></aboutme>
+
+        <div class="col-12 d-xl-none d-sm-block">
+            <div class="row align-items-center ">
+                <div class="col-6 d-flex justify-content-center">
+                    <div class="">
+                        <p class="Text">準備好製作屬於自己的音樂?</p>
+
+                        <router-link class="router-link " to="/Project">
+                            現在委託
+                            <span class="arrow">📜</span>
+                        </router-link>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <aboutme class=""></aboutme>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -36,7 +55,8 @@ export default {
   },
   computed: {
     pathData() {
-      return `M -1 68 C 0 20 20 0 49 0 L 991 0 C 1055 2 1069 27 1070 71 C 1072 129 1100 156 1167 158 C 1219 159 1236 193 1236 227 V 568 C 1237 709 1123 620 1066 710 L 348 708 C 316 708 301 697 300 679 C 300 545 241 538 47 535 C 20 536 -1 515 0 487 z`;
+        return'M -0.000772 0.093278 C 0.000000 0.027435 0.015432 0.000000 0.037809 0.000000 L 0.764660 0.000000 C 0.814043 0.002743 0.824846 0.037037 0.825617 0.097394 C 0.827160 0.176955 0.848765 0.213992 0.925154 0.216735 C 0.940586 0.218107 0.980710 0.240055 0.977623 0.314129 V 0.779150 C 0.954475 0.972565 0.871142 0.809328 0.822531 0.973937 L 0.268519 0.971193 C 0.243827 0.971193 0.232253 0.956104 0.231481 0.931413 C 0.231481 0.747599 0.185957 0.737997 0.036265 0.733882 C 0.015432 0.735254 -0.000772 0.706447 0.000000 0.668038 z';
+        //return `M -1 68 C 0 20 20 0 49 0 L 991 0 C 1055 2 1069 27 1070 71 C 1072 129 1100 156 1199 158 C 1219 159 1271 175 1267 229 V 568 C 1237 709 1129 590 1066 710 L 348 708 C 316 708 301 697 300 679 C 300 545 241 538 47 535 C 20 536 -1 515 0 487 z`;
     }
   }
 }
@@ -48,7 +68,7 @@ export default {
   top: 2vh; /* 使用相對單位 */
   left: 1.5vw; /* 使用相對單位 */
   z-index: 100; /* 確保卡片顯示在前方 */
-  width: 18vw; /* 使用相對單位 */
+  /*width: 18vmin; /* 使用相對單位 */
   animation: leftIn 2s ease-in-out 0s 1;
 }
 
@@ -57,16 +77,8 @@ export default {
   justify-content: center;
   align-items: center;
   position: relative;
-  width: 100%;
-
 }
 
-.image-wrapper {
-  position: relative;
-  display: inline-block;
-  width: 100%; /* 使用百分比 */
-  height: 100%; /* 使用百分比 */
-}
 
 .video-content {
   display: block;
@@ -80,25 +92,23 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
   pointer-events: none; /* 確保 SVG 不會阻擋鼠標事件 */
   z-index: 50;
+  background-color: rgba(0, 255, 255, 0);
 }
 
 .text-container {
     position: absolute;
-    bottom: 3vh;
-    left: 3vh;
+    bottom: 3vmin;
+    left: 3vmin;
     color: white;
     font-family: 'Arial', sans-serif;
-    font-size: 18px;
     border-radius: 50px; /* 增加圓角以更美觀 */
 }
 
 .router-link {
     font-weight: bold; /* 粗體 */
-    font-size: 25px;
+    font-size: 1.6vmin;
     display: inline-flex;
     align-items: center;
     text-decoration: none;
@@ -124,7 +134,7 @@ export default {
 .Text {
     color: rgba(255, 255, 255, 0.85);
     font-weight: bold; /* 粗體 */
-    font-size: 15px;
+    font-size: 1.4vmin;
     font-family: "Microsoft JhengHei", "微軟雅黑", "generic-family";
     font-style: normal;
     color: #ffffff;
@@ -167,6 +177,19 @@ export default {
   }
 }
 
+@media (max-width: 1200px) {
+  .text-container {
+    position: relative; /* 在小屏幕上使用相对定位 */
+    width: 100%; /* 使容器充满整个列宽 */
+    text-align: center; /* 文字居中显示 */
+    margin: 10px 0; /* 添加上下边距 */
+  }
+
+  .router-link {
+    font-size: 4vw; /* 调整链接文字大小 */
+    padding: 10px; /* 减少内边距 */
+  }
+}
 
 /* 媒體查詢 */
 @media (max-width: 768px) {

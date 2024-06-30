@@ -8,6 +8,8 @@ Route::get('/', function () {
 
 use App\Http\Controllers\FormController;
 
-Route::post('/submit-form', [FormController::class, 'submitForm'])->name('submit.form'); //表單註冊路由
+Route::post('/submissions-form', [FormController::class, 'submitForm'])->name('submissions.form'); //表單註冊路由
 
-Route::get('/submissions', [FormController::class, 'getSubmissions'])->name('submissions.get'); //取得表單路由
+// 若您的控制器方法用於API響應，建議將路由放在routes/api.php中
+Route::get('/submissions-get', [FormController::class, 'getSubmissions'])->name('submissions.get'); //取得表單路由
+

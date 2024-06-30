@@ -1,23 +1,29 @@
 <template>
     <hr>
     <div class="row mt-5">
-        <div class="circle-wrapper fade-leftin-item">
-            <a href="https://www.facebook.com" target="_blank">
-                <img class="imgstyle" src="../../assets/317727_facebook_social media_social_icon.png" alt="Facebook">
-            </a>
+        <div class="col-xxl-2 col-md-4 col-sm-6">
+            <div class="circle-wrapper fade-leftin-item ">
+                <a href="https://www.facebook.com" target="_blank">
+                    <img class="imgstyle" src="../../assets/317727_facebook_social media_social_icon.png" alt="Facebook">
+                </a>
+            </div>
         </div>
-        <div class="circle-wrapper fade-leftin-item">
-            <a href="https://www.instagram.com" target="_blank">
-                <img class="imgstyle" src="../../assets/1298747_instagram_brand_logo_social media_icon.png" alt="">
-            </a>
+        <div class="col-xxl-2 col-md-4 col-sm-6">
+            <div class="circle-wrapper fade-leftin-item">
+                <a href="https://www.instagram.com" target="_blank">
+                    <img class="imgstyle" src="../../assets/1298747_instagram_brand_logo_social media_icon.png" alt="">
+                </a>
+            </div>
         </div>
-        <div class="circle-wrapper fade-leftin-item">
-            <a href="https://www.twitter.com" target="_blank">
-                <img class="imgstyle" src="../../assets/5296516_tweet_twitter_twitter logo_icon.png" alt="">
-            </a>
+        <div class="col-xxl-2 col-md-4 col-sm-12">
+            <div class="circle-wrapper fade-leftin-item">
+                <a href="https://www.twitter.com" target="_blank">
+                    <img class="imgstyle" src="../../assets/5296516_tweet_twitter_twitter logo_icon.png" alt="">
+                </a>
+            </div>
         </div>
 
-        <div class="col mx-5 fade-in-item">
+        <div class="col-xxl-6 col-md-12 fade-in-item mx-sm-2 mx-xxl-0">
             <div class="d-flex flex-row-reverse TextStyle2" >
                 <h1 class="">音樂工作者</h1>
             </div>

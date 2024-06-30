@@ -5,26 +5,26 @@
             <h1 class="offset-md-2 col-4 Notofont">委託流程 │ <a href="col-4"><img src="" alt=""></a></h1>
         </div>
         <div class="row">
-            <div class="col-12 col-md-6">
+            <div class="col-sm-12 col-xxl-6">
                 <div class="row left1">
-                    <div class="col-12 d-md-flex justify-content-md-end">
-                        <div class="step-item col-5 d-flex align-items-center">
+                    <div class="col-12 d-flex justify-content-xxl-end justify-content-center">
+                        <div class="step-item col-6 d-flex align-items-center">
                             <span class="step-number">1</span>
                             <div class="step-content d-flex align-self-center">
-                                <p class="Notofont text-center">發送表單告知委託類型，並等待電子郵件回覆報價。</p>
+                                <p class="Notofont text-center ">發送表單告知委託類型，並等待電子郵件回覆報價。</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 d-md-flex justify-content-md-end">
-                        <div class="step-item col-5 d-flex align-items-center">
+                    <div class="col-12 d-flex justify-content-xxl-end justify-content-center">
+                        <div class="step-item col-6 d-flex align-items-center">
                             <span class="step-number">2</span>
                             <div class="step-content d-flex align-self-center">
                                 <p class="Notofont text-center">討論內容及交稿時間。</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 d-md-flex justify-content-md-end">
-                        <div class="step-item col-5 d-flex align-items-center">
+                    <div class="col-12 d-flex justify-content-xxl-end justify-content-center">
+                        <div class="step-item col-6 d-flex align-items-center">
                             <span class="step-number">3</span>
                             <div class="step-content d-flex align-self-center">
                                 <p class="Notofont text-center">給予報價並支付報價之25%訂金。</p>
@@ -34,26 +34,26 @@
                 </div>
             </div>
 
-            <div class="col-12 col-md-6 pt-md-5">
+            <div class="col-sm-12 col-xxl-6 pt-xxl-5">
                 <div class="row d-flex align-items-end left2">
-                    <div class="col-12">
-                        <div class="step-item2 col-5 d-flex align-items-center">
+                    <div class="col-12 d-flex justify-content-sm-center justify-content-xxl-start">
+                        <div class="step-item2 col-6 d-flex align-items-center">
                             <span class="step-number">4</span>
                             <div class="step-content d-flex align-self-center">
                                 <p class="Notofont text-center">開始製作委託以及修改。</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12">
-                        <div class="step-item2 col-5 d-flex align-items-center">
+                    <div class="col-12 d-flex justify-content-sm-center justify-content-xxl-start">
+                        <div class="step-item2 col-6 d-flex align-items-center">
                             <span class="step-number">5</span>
                             <div class="step-content d-flex align-self-center">
                                 <p class="Notofont text-center">確認完稿無異議後支付尾款。</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12">
-                        <div class="step-item2 col-5 d-flex align-items-center">
+                    <div class="col-12 d-flex justify-content-sm-center justify-content-xxl-start">
+                        <div class="step-item2 col-6 d-flex align-items-center">
                             <span class="step-number">6</span>
                             <div class="step-content d-flex align-self-center">
                                 <p class="Notofont text-center">交付創作檔案。</p>
@@ -187,25 +187,25 @@
         }
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: 1400px) {
         .step-item::after {
             content: '';
             position: absolute;
-            height: 120%;
+            height: 150%;
             width: 4px;
             background-color: #FFD204;
-            top: calc(100% - 15px);
-            left: 13px;
+            top: 50%;
+            left: 11px;
         }
 
         .step-item2::after {
             content: '';
             position: absolute;
-            height: 120%;
+            height: 8vh;
             width: 4px;
             background-color: #FFD204;
-            bottom: calc(100% - 15px);
-            left: 13px;
+            bottom: 50%;
+            left: 11px;
         }
     }
 
